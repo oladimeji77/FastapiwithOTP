@@ -1,0 +1,11 @@
+Final Thoughts
+If your API makes external API calls or database queries, use async to handle more users at once.
+FastAPI is built for async, so take advantage of it!
+For best performance, use httpx (for API calls) and async SQLAlchemy (for database).
+
+Key Takeaways
+Feature	        Synchronous (Blocking)	                    Asynchronous (Non-blocking)
+Execution       Speed	Slower (waits for each task)	    Faster (tasks run in parallel)
+Scaling	        Not efficient for multiple requests	        Handles many requests efficiently
+API Calls	    requests.get() (blocking)	                httpx.AsyncClient().get() (non-blocking)
+DB Queries	    session.query() (blocking)	                await session.execute() (non-blocking)
